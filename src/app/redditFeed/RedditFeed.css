@@ -1,0 +1,23 @@
+.glyphicon{
+  font-size: 35px;
+}
+.img-thumbnail, .thumbnail{
+  font-size: xx-small;
+}
+.vote_sum {
+  font-size: 3.6rem;
+  font-family: "Droid Sans", sans-serif;
+}
+.border{
+  border: thin solid blue;
+}
+.header{
+  font-weight: 600;
+}
+
+.odd{
+ background-color: white;
+}
+.even{
+  background-color: lightgray;
+}

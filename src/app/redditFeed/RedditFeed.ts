@@ -14,4 +14,5 @@ export class RedditFeed{
   public subreddit_type : string;
   public public_description : string;
   public subscribers: string;
+  public ups: string;
 }

@@ -7,8 +7,9 @@ import {RedditFeed} from './RedditFeed';
 
 @Component({
   selector:'redit-feed',
-  templateUrl:'./redditFeed.template.html'
-  
+  templateUrl:'./redditFeed.template.html',
+  styleUrls:['./RedditFeed.css']
+
 })
 export class RedditFeedComponent implements OnInit{
    feedList :RedditFeed[];

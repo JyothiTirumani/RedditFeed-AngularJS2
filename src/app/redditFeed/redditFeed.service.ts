@@ -17,8 +17,13 @@ import 'rxjs/add/operator/toPromise';
 export class RedditFeedService{
   constructor(private http: Http){}
   private redditSubModule : string = "node";
-   private url: string = "http://www.reddit.com/r/" + this.redditSubModule + "/new/.json?limit=50";
-     //'https://www.reddit.com/r/redditdev/top.json';//'http://www.reddit.com/r/subreddit/new.json?sort=new';//'https://www.reddit.com/subreddits/search.json?q=reactjs'
+   private url: string = "https://www.reddit.com/subreddits/search.json?q=reactjs";
+  //"https://www.reddit.com/r/reactjs/.json";
+     //"http://www.reddit.com/r/" + this.redditSubModule + "/new/.json?limit=50";
+     //'https://www.reddit.com/r/redditdev/top.json';
+  // 'http://www.reddit.com/r/subreddit/new.json?sort=new';
+  // 'https://www.reddit.com/subreddits/search.json?q=reactjs'
+
   getFeed(): Observable<any>{
     return this.http.get(this.url)
       .map(response => response.json())
@@ -27,11 +32,11 @@ export class RedditFeedService{
         return {
           id: d.data.id,
           title: d.data.title,
-          imageUrl: d.data.header_img,
+          imageUrl: d.data.thumbnail,
           subreddit_type : d.data.subreddit_type,
           subscribers : d.data.subscribers,
           public_description: d.data.public_description,
-
+          ups : d.data.ups
         }
       }));
      // .map(this.extractData);
